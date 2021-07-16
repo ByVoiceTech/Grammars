@@ -1,0 +1,26 @@
+#
+#  NaturalNumbers.grammars
+#
+
+# PREPENDS <NaturalNumber.> IN FRONT OF EVERY GRAMMAR NAME, EXCEPT WHEN A MODULE NAME IS ALREADY THERE
+module NaturalNumber;
+
+<NaturalNumber.Digit> = [oh=0 one=1 two=2 three=3 four=4 five=5 six=6 seven=7 eight=8 nine=9 zero=0];
+
+<NaturalNumber.Teen> = [ten=10 eleven=11 twelve=12 thirteen=13 fourteen=14 fifteen=15 sixteen=16 seventeen=17 eighteen=18 nineteen=19];
+
+<NaturalNumber.Tens> = [twenty=20 thirty=30 forty=40 fifty=50 sixty=60 seventy=70 eighty=80 ninety=90];
+
+<NaturalNumber.Integer0_99> = [<NaturalNumber.Digit> <NaturalNumber.Teen> (<NaturalNumber.Tens> ?<NaturalNumber.Digit>)];
+
+<NaturalNumber.Integer0_999> = [(<NaturalNumber.Digit> hundred ?<NaturalNumber.Integer0_99>)
+			        (<NaturalNumber.Digit> hundred)];
+
+# USEFUL FOR MINUTES AND SECONDS, OR ANYTHING BASE 60
+<NaturalNumber.Integer0_59> = [<NaturalNumber.Digit> <NaturalNumber.Teen> ([twenty=20 thirty=30 forty=40 fifty=50] ?<NaturalNumber.Digit>)];
+
+# USEFUL FOR HOURS, OR ANYTHING BASE 24
+<NaturalNumber.Integer1_23> = [one=1 two=2 three=3 four=4 five=5 six=6 seven=7 eight=8 nine=9 ten=10 eleven=11 twelve=12
+                               thirteen=13 fourteen=14 fifteen=15 sixteen=16 seventeen=17 eighteen=18 nineteen=19
+                               twenty=20 (twenty one)=21 (twenty two)=22 (twenty three)=23];
+                               
