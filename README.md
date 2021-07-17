@@ -16,7 +16,7 @@ With a function:
 
 `<GrammarName> = expression { myFunction($*); }` (trailing semicolon optional)
 
-Expression operators:
+Expression operators use prefix placement:
 
 | Operator | Characters | Description | Example |
 | -------- | ---------- | ----------- | ------- |
