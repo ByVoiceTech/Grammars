@@ -16,6 +16,11 @@ With a function:
 
 `<GrammarName> = expression { myFunction($*); }` (trailing semicolon optional)
 
+Comments being with hash, extend only to end of line:
+
+    # This is a comment.
+    <Hello> = [hi hello welcome greetings]; # Another comment.
+
 Expression operators use prefix placement:
 
 | Operator | Characters | Description | Example |
