@@ -1,0 +1,23 @@
+#
+# TelevisionStations.grammars
+#
+# This is meant to be contributed to and kept up-to-date by the
+# community of developers writing apps for ByVoice Assistant.
+#
+
+# NO PREPEND OF "TelevisionStations." MEANS THIS IS A LOCAL, PRIVATE (SUB-)GRAMMAR
+<Channel> = [channel station network];
+
+# PREPEND MEANS THIS IS A PUBLIC, EXPORTED GRAMMAR TO BE USED BY EXTERNAL (SUPER-)GRAMMARS
+<TelevisionStations.Names> = [
+    (?the discovery <Channel>)=DISCOVERY
+    (e.s.p.n.)=ESPN
+    nikelodeon=NICKELODEON
+    (disney <Channel>)=DISNEY
+    (history <Channel>)=HISTORY
+    a.b.c=ABC
+    c.b.s.=CBS
+    n.b.c.=NBC
+    c.n.n.=CNN
+    ... to be filled in by contributors, or by me when i have more time!:-)
+]
