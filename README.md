@@ -59,6 +59,7 @@ Optional plurals can use underscore:
 Labels are attached with = and are generally uppercase (like constants or macro definitions) or numbers:
 
     <SFAirport> = [(san francisco) S.F.O.]=SFO;
+    
     <Digit> = [zero=0 one=1 two=2 three=3 four=4];
 
 Top-level grammar should be defined last (at bottom of file), and uses period syntax without \<\>:
