@@ -37,6 +37,8 @@ productions be encountered in parsing.
 
 :warning: `<Digit> = *[one two three four]; # NOT ALLOWED, CAN PRODUCE NULL`
 
+:white_check_mark: `<Order> = i want a *[small medium large] pizza; # OKAY, NULL IS INSIDE NON-NULL GRAMMAR`
+
 Acronyms should use periods in their word identifiers:
 
 `<Channel> = [E.S.P.N. A.B.C. C.B.S. C.N.N.];`
