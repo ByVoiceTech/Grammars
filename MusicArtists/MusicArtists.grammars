@@ -1,1 +1,10 @@
+#
+#  MusicArtists.grammars
+#
 
+<MusicArtists.Names> = [
+    (katy perry)=KATY_PERRY
+    (snoop ?dogg)=SNOOP_DOGG # CAN SAY JUST "snoop"
+    (hall and oates)=HALL_OATES
+    (justin bieber)=JUSTIN_BIEBER
+    ... contributers add the rest ...
