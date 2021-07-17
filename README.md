@@ -4,19 +4,19 @@ This repository contains open source versions of commonly used grammars and thei
 
 ## Syntax
 
-Simple BNF style definitions, grammar names are surrounded by \<\>, words are everything else:
+Simple BNF style definitions, grammar names are surrounded by \<\>. Identifiers (words and grammar names within \<\>) must begin with a letter, can include numbers (after first letter), and may be upper or lower case:
 
-`<Digit> = [one two three four five six seven eight nine zero oh];`
+    <Digit> = [one two three four five six seven eight nine zero oh];
+    
+    <Telephone> = +<Digit>;
+    
+    <Command> = [call dial phone] <Telephone>;
 
-`<Telephone> = +<Digit>;`
+With a function (trailing semicolon optional after close brace):
 
-`<Command> = [call dial phone] <Telephone>;`
+    <GrammarName> = expression { myFunction($*); }
 
-With a function:
-
-`<GrammarName> = expression { myFunction($*); }` (trailing semicolon optional)
-
-Comments being with hash, extend only to end of line:
+Comments begin with hash, extend only to end of line:
 
     # This is a comment.
     <Hello> = [hi hello welcome greetings]; # Another comment.
@@ -33,25 +33,27 @@ Expression operators use prefix placement:
 
 The default operator for a grammar definition is AND:
 
-`<Newspaper> = the new york times;`
+    <Newspaper> = the new york times;
 
 NULL productions are disallowed, meaning a grammar must map to at least one word.
 To effect a NULL, use the OPT or KLEENE operators, but the grammar containing it
 must still produce at least one word. This prevents "infinite loops" should null
 productions be encountered in parsing.
 
-:warning: `<Digit> = *[one two three four]; # NOT ALLOWED, CAN PRODUCE NULL`
-
-:white_check_mark: `<Order> = i want a *[small medium large] pizza; # OKAY, NULL IS INSIDE NON-NULL GRAMMAR`
-
+    # NOT ALLOWED, CAN PRODUCE NULL FOR GRAMMAR
+    <Digit> = *[one two three four];
+    
+    # OKAY, NULL IS INSIDE NON-NULL GRAMMAR
+    <Order> = i want a *[small medium large] pizza;
+    
 Acronyms should use periods in their word identifiers:
 
-`<Channel> = [E.S.P.N. A.B.C. C.B.S. C.N.N.];`
+    <Channel> = [E.S.P.N. A.B.C. C.B.S. C.N.N.];
 
 Optional plurals can use underscore:
 
-`<MoneyAmount> = [one two] dollar_s;`
+    <MoneyAmount> = [one two] dollar_s;
 
 Top-level grammar should be defined last (at bottom of file), and uses period syntax without \<\>:
 
-`.TimerApp = [<SetTimer> <QueryTimer> <CancelTimer>];`
+    .TimerApp = [<SetTimer> <QueryTimer> <CancelTimer>];
