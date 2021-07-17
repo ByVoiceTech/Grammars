@@ -4,6 +4,18 @@ This repository contains open source versions of commonly used grammars and thei
 
 ## Syntax
 
+Simple BNF style: \<GrammarName\> = expression;
+
+With a function, semicolon optional: 
+
+Identifiers: grammar names are surrounded by \<\>, words are everything else.
+
+\<Digit\> = \[one two three four five six seven eight nine zero oh\];
+
+A simple BNF syntax applies to each rule.
+
+
+
 | Operator | Characters | Description | Example |
 | -------- | ---------- | ----------- | ------- |
 | AND | ( ) | Spoken in sequence | (the new york times) |
