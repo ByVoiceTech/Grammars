@@ -35,6 +35,8 @@ To effect a NULL, use the OPT or KLEENE operators, but the grammar containing it
 must still produce at least one word. This prevents "infinite loops" should null
 productions be encountered in parsing.
 
+:warning: `<Digit> = *[one two three four]; # NOT ALLOWED, CAN PRODUCE NULL`
+
 Acronyms should use periods in their word identifiers:
 
 `<Channel> = [E.S.P.N. A.B.C. C.B.S. C.N.N.];`
