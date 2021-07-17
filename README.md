@@ -4,17 +4,19 @@ This repository contains open source versions of commonly used grammars and thei
 
 ## Syntax
 
-Simple BNF style: \<GrammarName\> = expression;
+Simple BNF style definitions, grammar names are surrounded by \<\>, words are everything else:
 
-With a function, semicolon optional: 
+`<Digit> = [one two three four five six seven eight nine zero oh];`
 
-Identifiers: grammar names are surrounded by \<\>, words are everything else.
+`<Telephone> = +<Digit>;`
 
-\<Digit\> = \[one two three four five six seven eight nine zero oh\];
+`<Command> = [call dial phone] <Telephone>;`
 
-A simple BNF syntax applies to each rule.
+With a function:
 
+`<GrammarName> = expression { myFunction($*); }` (trailing semicolon optional)
 
+Expression operators:
 
 | Operator | Characters | Description | Example |
 | -------- | ---------- | ----------- | ------- |
@@ -24,9 +26,21 @@ A simple BNF syntax applies to each rule.
 | LOOP | + | One or more of | toppings are \+\[pepperoni cheese sausage ham\] |
 | KLEENE | * | Zero or more of | thanks \*very much |
 
+The default operator for a grammar definition is AND:
+
+`<Newspaper> = the new york times;`
+
 NULL productions are disallowed, meaning a grammar must map to at least one word.
 To effect a NULL, use the OPT or KLEENE operators, but the grammar containing it
 must still produce at least one word. This prevents "infinite loops" in parsing.
+
+Acroynms should use periods in their word identifiers:
+
+`<Channel> = [E.S.P.N. A.B.C. C.B.S. C.N.N.];`
+
+Optional plurals should use underscore:
+
+`<MoneyAmount> = [one two] dollar_s;`
 
 
 
