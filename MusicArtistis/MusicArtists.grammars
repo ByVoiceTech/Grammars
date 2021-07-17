@@ -1,0 +1,8 @@
+#
+#  MusicArtists.grammars
+#
+
+... to be filled in with grammars representing ways of speaking music artists' names
+
+# EXAMPLE: (katy perry)=KATY_PERRY
+#          (snoop ?dogg)=SNOOP_DOGG # CAN JUST SAY "snoop"!:-)
