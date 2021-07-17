@@ -11,6 +11,8 @@ Simple BNF style definitions, grammar names are surrounded by \<\>. Identifiers 
     <Telephone> = +<Digit>;
     
     <Command> = [call dial phone] <Telephone>;
+    
+    <Name> = [John Bob Tom MiXeDcAsE Blink182];
 
 With a function (trailing semicolon optional after close brace):
 
