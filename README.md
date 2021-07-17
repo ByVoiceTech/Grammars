@@ -4,7 +4,7 @@ This repository contains open source versions of commonly used grammars and thei
 
 ## Syntax
 
-Simple BNF style definitions, grammar names are surrounded by \<\>. Identifiers (words and grammar names within \<\>) must begin with a letter, can include numbers (after first letter), and may be upper or lower case:
+Simple BNF style definitions. Grammars must be defined before they are referenced. Grammar names are surrounded by \<\>. Identifiers (words and grammar names within \<\>) must begin with a letter, can include numbers (after first letter), and may be upper or lower case:
 
     <Digit> = [one two three four five six seven eight nine zero oh];
     
