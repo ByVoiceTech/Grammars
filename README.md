@@ -42,5 +42,10 @@ Optional plurals should use underscore:
 
 `<MoneyAmount> = [one two] dollar_s;`
 
+Top-level grammar should be defined last (at bottom of file), and uses period syntax without \<\>:
+
+`.TimerApp = [<SetTimer> <QueryTimer> <CancelTimer>];`
+
+
 
 
