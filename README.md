@@ -32,20 +32,17 @@ The default operator for a grammar definition is AND:
 
 NULL productions are disallowed, meaning a grammar must map to at least one word.
 To effect a NULL, use the OPT or KLEENE operators, but the grammar containing it
-must still produce at least one word. This prevents "infinite loops" in parsing.
+must still produce at least one word. This prevents "infinite loops" should null
+productions be encountered in parsing.
 
-Acroynms should use periods in their word identifiers:
+Acronyms should use periods in their word identifiers:
 
 `<Channel> = [E.S.P.N. A.B.C. C.B.S. C.N.N.];`
 
-Optional plurals should use underscore:
+Optional plurals can use underscore:
 
 `<MoneyAmount> = [one two] dollar_s;`
 
 Top-level grammar should be defined last (at bottom of file), and uses period syntax without \<\>:
 
 `.TimerApp = [<SetTimer> <QueryTimer> <CancelTimer>];`
-
-
-
-
