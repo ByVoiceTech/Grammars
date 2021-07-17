@@ -24,7 +24,7 @@ Expression operators use prefix placement:
 | OR | \[ \] | Alternatives | \[cat dog mouse horse cow\] |
 | OPT | ? | Optional word or grammar | the ?tall tree |
 | LOOP | + | One or more of | toppings are \+\[pepperoni cheese sausage ham\] |
-| KLEENE | * | Zero or more of | thanks \*very much |
+| KLEENE | * | Zero or more of | thank you \*very much |
 
 The default operator for a grammar definition is AND:
 
